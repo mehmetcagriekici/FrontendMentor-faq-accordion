@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+
+    <title>Frontend Mentor | FAQ accordion</title>
+  </head>
+  <body>
+    <main>
+      <!--card component-->
+      <div class="card-component">
+        <!--app header-->
+        <header>
+          <!--star icon-->
+          <img src="./assets/images/icon-star.svg" alt="header star icon" />
+
+          <!--app title-->
+          <h1>FAQs</h1>
+        </header>
+
+        <!--FAQ List-->
+        <ul id="faq-list" class="faq-list">
+          <!--S
+            --FAQ item--
+          <li>
+            --on click -> toggle expand/collapse the panel--
+            <button class="question-trigger">
+              --question--
+              <p></p>
+
+              --expand/collapse icon--
+              <img />
+            </button>
+
+            --hidden panel--
+            <div class="answer-panel">
+              --answer--
+              <p></p>
+            </div>
+          </li>
+
+          --divider--
+          <hr />
+          -->
+        </ul>
+      </div>
+
+      <!--background image container-->
+      <div class="background-image-container">
+        <!--displayed on mobile, hidden on desktop-->
+        <img
+          src="./assets/images/background-pattern-mobile.svg"
+          alt="background pattern mobile image"
+          class="background-pattern-mobile"
+        />
+
+        <!--displayed on desktop, hidden on mobile-->
+        <img
+          src="./assets/images/background-pattern-desktop.svg"
+          alt="background pattern desktop image"
+          class="background-pattern-desktop"
+        />
+      </div>
+    </main>
+  </body>
+</html>

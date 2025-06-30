@@ -1,0 +1,330 @@
+/*import the font family*/
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*root variables - mobile first*/
+:root {
+  /*colors from the design system*/
+  /*white*/
+  --color-white: #ffffff;
+
+  /*black*/
+  --color-black: #000000;
+
+  /*purple*/
+  --color-purple-950: #301534;
+  --color-purple-600: #8b6990;
+  --color-purple-100: #f8eeff;
+
+  /*violet*/
+  --color-violet-600: #ad28eb;
+
+  /*typography presets from the design system*/
+  /*font family for all presets*/
+  --font-family: "Work Sans", sans-serif;
+
+  /*text preset 1 - Work Sans Bold*/
+  --text-preset-1-font-size: 56px;
+  --text-preset-1-line-height: 66px;
+  --text-preset-1-font-weight: 900;
+
+  /*text preset 2 - Work Sans SemiBold*/
+  --text-preset-2-font-size: 18px;
+  --text-preset-2-line-height: 21px;
+  --text-preset-2-font-weight: 700;
+
+  /*text preset 3 - Work Sans Regular*/
+  --text-preset-3-font-size: 16px;
+  --text-preset-3-line-height: 24px;
+
+  /*spacings from the design system*/
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+
+  /*border radius*/
+  --radius-100: 8px;
+  --radius-200: 16px;
+
+  /*element sizes from the design system - heights auto calculated unless specified*/
+  /*background pattern width*/
+  --background-pattern-width: 100%;
+
+  /*card size - calculated from the design system*/
+  --card-width: 87.2%;
+  ---max-card-height: 67.85%;
+
+  /*star icon width from the design system*/
+  --star-icon-width: 24px;
+
+  /*expand/collapse icon width*/
+  --question-icon-width: 30px;
+
+  /*faq-item texts (h3 and p) widths*/
+  --faq-item-text-text-max-width: 80%;
+}
+
+html {
+  interpolate-size: allow-keywords;
+}
+
+/*default styles*/
+html,
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+
+  /*1rem = 10px*/
+  font-size: 62.5%;
+
+  /*default font family for the entire app*/
+  font-family: var(--font-family);
+
+  background-color: var(--color-purple-100);
+}
+
+img {
+  /*fit image*/
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/*reset list*/
+ul {
+  list-style: none;
+}
+
+/*reset button*/
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+main {
+  /*base background image and the card placements*/
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+/*background pattern images*/
+/*image contianer - containes both desktop and mobile images*/
+.background-image-container {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+
+  width: var(--background-pattern-width);
+}
+
+/*mobile image*/
+.background-pattern-mobile {
+  display: flex;
+}
+
+/*desktop image*/
+.background-pattern-desktop {
+  /*hidden on mobile devices*/
+  display: none;
+}
+
+/*card*/
+.card-component {
+  /*center - above the background pattern*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  /*card width*/
+  width: var(--card-width);
+  max-height: var(---max-card-height);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  align-items: safe start;
+  gap: var(--spacing-300);
+
+  border-radius: var(--radius-100);
+
+  padding: var(--spacing-300);
+
+  background-color: var(--color-white);
+
+  overflow-y: auto;
+}
+
+/*card header*/
+header {
+  display: flex;
+  gap: var(--spacing-300);
+}
+
+/*star icon*/
+header > img {
+  width: var(--star-icon-width);
+}
+
+header > h1 {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: start;
+  color: var(--color-purple-950);
+}
+
+/*FAQ list*/
+.faq-list {
+  width: 100%;
+  /*one col flex*/
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.faq-list hr {
+  height: 1px;
+
+  background-color: var(--color-purple-100);
+
+  border: none;
+  outline: none;
+}
+
+/*FAQ item*/
+.faq-item {
+  /*one col flex*/
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+/*question container - button element*/
+.question-trigger {
+  width: 100%;
+
+  /*one row flex*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-300);
+
+  cursor: pointer;
+}
+
+.question-trigger:hover h3 {
+  color: var(--color-violet-600);
+}
+
+/*question header*/
+.question-trigger h3 {
+  max-width: var(--faq-item-text-text-max-width);
+
+  font-size: 16px;
+  font-weight: 700;
+  text-align: start;
+  color: var(--color-purple-950);
+}
+
+/*question icon - plus or minues icon*/
+.question-icon-container {
+  width: var(--question-icon-width);
+}
+
+.answer-panel {
+  overflow: hidden;
+
+  transition: height 0.3s ease-out;
+}
+
+/*question answer*/
+.answer-panel p {
+  max-width: var(--faq-item-text-text-max-width);
+
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-purple-600);
+}
+
+/*media queries*/
+@media (min-width: 768px) {
+  :root {
+    /*decrease the card width*/
+    --card-width: 78.1%;
+
+    /*decrease max card height*/
+    ---max-card-height: 62.7%;
+
+    /*increase star icon size*/
+    --star-icon-width: 40px;
+  }
+
+  .card-component {
+    /*increase gap*/
+    gap: var(--spacing-400);
+
+    /*increase border radius*/
+    border-radius: var(--radius-200);
+
+    /*increase padding*/
+    padding: var(--spacing-500);
+  }
+
+  header > h1 {
+    /*apply text preset 1 to h1*/
+    font-size: var(--text-preset-1-font-size);
+    font-weight: var(--text-preset-1-font-weight);
+    line-height: var(--text-preset-2-line-height);
+  }
+
+  .question-trigger h3 {
+    /*apply text preset 2*/
+    font-size: var(--text-preset-2-font-size);
+    font-weight: var(--text-preset-2-font-weight);
+    line-height: var(--text-preset-2-line-height);
+  }
+
+  .answer-panel p {
+    /*apply text preset 3*/
+    font-size: var(--text-preset-3-font-size);
+    line-height: var(--text-preset-3-line-height);
+  }
+
+  .background-pattern-desktop {
+    /*display starting from tablets*/
+    display: flex;
+  }
+
+  .background-pattern-mobile {
+    /*hide the mobile pattern image*/
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    /*decrease the card width*/
+    --card-width: 52.6%;
+  }
+}
+
+.faq-collapsed {
+  height: 0;
+}
+
+.faq-expanded {
+  height: auto;
+}
