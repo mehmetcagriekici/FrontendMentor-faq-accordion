@@ -107,7 +107,6 @@ ul {
 /*reset button*/
 button {
   background: none;
-  outline: none;
   border: none;
 }
 
@@ -201,7 +200,6 @@ header > h1 {
   background-color: var(--color-purple-100);
 
   border: none;
-  outline: none;
 }
 
 /*FAQ item*/
