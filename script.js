@@ -266,9 +266,9 @@ async function getData() {
 function QuestionComponent({ question, answer, key }) {
   return `
     <!--FAQ item-->
-    <li id="faq-item-${key}" class="faq-item">
+    <li id="faq-item-${key}" class="faq-item" aria-label="faq-item-${key}" role="faq-item">
         <!--on click -> toggle expand/collapse the panel-->
-        <button class="question-trigger">
+        <button class="question-trigger" aria-label="faq-item-button" role="faq-item-button">
             <!--question-->
             <h3>${question}</h3>
 
@@ -279,7 +279,7 @@ function QuestionComponent({ question, answer, key }) {
         </button>
 
         <!--hidden panel-->
-        <div class="answer-panel faq-collapsed" id="faq-answer-${key}">
+        <div class="answer-panel faq-collapsed" id="faq-answer-${key}" aria-label="faq-item-accordion-panel" role="faq-item-accordion-panel">
             <!--answer-->
             <p>${answer}</p>
         </div>
