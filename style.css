@@ -220,6 +220,9 @@ header > h1 {
   align-items: center;
   gap: var(--spacing-300);
 
+  /*for the outline*/
+  padding: var(--spacing-100);
+
   cursor: pointer;
 }
 
@@ -319,10 +322,24 @@ header > h1 {
   }
 }
 
+/*utility classes*/
+
+/*initial faq style - panel hidden*/
 .faq-collapsed {
   height: 0;
 }
 
+/*expanded faq style*/
 .faq-expanded {
   height: auto;
+}
+
+/*marked faq with arrow keys - goes on the question trigger button*/
+.faq-marked {
+  outline: 2px solid var(--color-black);
+  border-radius: 5px;
+}
+
+.faq-marked h3 {
+  color: var(--color-violet-600);
 }
